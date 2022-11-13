@@ -24,65 +24,114 @@
     }
   </script>
 </head>
-<body class="bg-dark text-white flex justify-center flex-col items-center">
-  <main class="w-1/2">
-    <h1>Notes App</h1>
-    <div class="flex items-center">
-      <!-- <input type="text"class="border-none outline-none p-2.5 w-85 text-dark rounded-l-md"/> -->
-      <!-- Modal toggle -->
-      <button
-        class=" text-center w-2/12 border-none outline-none bg-pink-600 text-white p-2.5 rounded-r-md"
-        type="button" data-modal-toggle="input-notes">
-        Add Notes
-      </button>
-      <!-- Main modal -->
-      <div id="input-notes" tabindex="-1" aria-hidden="true"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-          <!-- Modal content -->
-          <div class="relative rounded-lg shadow bg-gray-700">
-            <button type="button"
-              class="absolute top-3 right-2.5 text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-800 hover:text-white"
-              data-modal-toggle="input-notes">
-              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span class="sr-only">Close modal</span>
-            </button>
-            <div class="py-6 px-6 lg:px-8">
-              <h3 class="mb-4 text-xl font-medium text-white">Add Your Notes</h3>
-              <form class="space-y-6" action="#">
-                <div>
-                  <label for="title" class="block mb-2 text-sm font-medium  text-gray-300">Title</label>
-                  <input type="text" name="title" id="my-title"
-                    class=" border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
-                    placeholder="Your Title" required="">
-                </div>
-                <div>
-                  <label for="notes" class="block mb-2 text-sm font-medium text-gray-300">Your Notes</label>
-                  <textarea id="my-notes" name="notes" rows="5"
-                    class="border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white resize-none"
-                    placeholder="Notes Here.."></textarea>
-                </div>
-                <button type="button"
-                  class="w-full text-white  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center" data-modal-toggle="input-notes" id="btn-add"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
-                    viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                  </svg>&nbsp;Add Notes</button>
-              </form>
-            </div>
+<body class="bg-dark text-white ">
+  <nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-gray-900 ">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <a href="https://flowbite.com/" class="flex items-center">
+        <img src="src/img/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">   Emore</span>
+      </a>
+      <div class="flex md:order-2">
+        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false"
+          class="md:hidden text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4  focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+          <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="sr-only">Search</span>
+        </button>
+        <div class="hidden relative md:block">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Search icon</span>
+          </div>
+          <input type="text" id="search-navbar"
+            class="block p-2 pl-10 w-full rounded-lg border sm:text-sm bg-glass border-gray-600 placeholder-gray-400 text-white focus:ring-pink-600 focus:border-pink-600"
+            placeholder="Search...">
+        </div>
+      </div>
+      <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-search">
+        <div class="relative mt-3 md:hidden">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <input type="text" id="search-navbar"
+            class="block p-2 pl-10 w-full rounded-lg border sm:text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-pink-600 focus:border-pink-600"
+            placeholder="Search...">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="flex justify-center flex-col items-center overflow-y-auto mb-28 mt-5">
+    <div class="no-result text-2xl text-gray-200 my-10"></div>
+    <div id="result" class="flex flex-wrap justify-center ">
+    </div>
+    <div id="search-filter"></div>
+  </section>
+
+  <section id="add-bottom" class="fixed bottom-0 left-0 w-full  p-5 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 bg-gray-900" >
+    <button class=" text-center border-none outline-none bg-pink-600 text-white p-2.5 rounded-r-md" type="button" id="btn-modal"
+      data-modal-toggle="input-notes">
+      Add Notes
+    </button>
+    <!-- Main modal -->
+    <div id="input-notes" tabindex="-1" aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
+      <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative rounded-lg shadow bg-gray-700">
+          <button type="button"
+            class="absolute top-3 right-2.5 text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-800 hover:text-white"
+            data-modal-toggle="input-notes">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+          <div class="py-6 px-6 lg:px-8">
+            <h3 class="mb-4 text-xl font-medium text-white">Add Your Notes</h3>
+            <form class="space-y-6" action="#">
+              <div>
+                <label for="title" class="block mb-2 text-sm font-medium  text-gray-300">Title</label>
+                <input type="text" name="title" id="my-title"
+                  class=" border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
+                  placeholder="Your Title" required="">
+              </div>
+              <div>
+                <label for="notes" class="block mb-2 text-sm font-medium text-gray-300">Your Notes</label>
+                <textarea id="my-notes" name="notes" rows="5"
+                  class="border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white resize-none"
+                  placeholder="Notes Here.."></textarea>
+              </div>
+              <button type="button"
+                class="w-full text-white  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center"
+                data-modal-toggle="input-notes" id="btn-add"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                </svg>&nbsp;Add Notes</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </main>
-
-  <div id="result" class="flex flex-wrap justify-center">
-  </div>
+  </section>
 
   <script src="script.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
