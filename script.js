@@ -98,7 +98,6 @@ function displayNotes() {
 
   // Search Filter
   const notesData = document.querySelectorAll(".notess");
-  const resultStatus = document.querySelector('.no-result')
   searchInput.addEventListener("keyup", function (event) {
     const keyword = event.target.value.toLowerCase();
   
