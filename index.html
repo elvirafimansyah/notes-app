@@ -66,16 +66,15 @@
         <span class="sr-only">Search icon</span>
       </div>
       <input type="text" id="search-navbar"
-        class="block p-2 pl-10 w-full rounded-lg border sm:text-sm bg-glass border-gray-600 placeholder-gray-400 text-white focus:ring-pink-600 focus:border-pink-600"
+        class="block px-2 py-3 pl-10 w-full rounded-lg border sm:text-sm bg-glass border-gray-600 placeholder-gray-400 text-white focus:ring-pink-600 focus:border-pink-600"
         placeholder="Search...">
     </div>
-    <div id="result" class="flex flex-wrap justify-center ">
+    <div id="result" class="flex flex-wrap justify-center mt-5">
     </div>
     <div id="search-filter"></div>
   </section>
 
-  <section id="add-bottom" class="fixed bottom-0 left-0 w-full  p-5 rounded-lg shadow md:flex md:items-center md:justify-center md:p-6 bg-gray-900">
-
+  <section id="add-bottom" class="fixed bottom-0 left-0 w-full  p-5 rounded-lg shadow flex items-center justify-center md:p-6 bg-gray-900">
     <button data-tooltip-target="tooltip-add"  class="absolute top-[-2rem] w-16 h-16 text-center border-none outline-none bg-pink-600 text-white  rounded-full flex items-center justify-center" type="button" id="btn-modal"
       data-modal-toggle="input-notes">
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-lg"
@@ -85,7 +84,7 @@
       </svg>
     </button>
     <div id="tooltip-add" role="tooltip"
-      class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+      class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-md opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
       Add Notes
       <div class="tooltip-arrow" data-popper-arrow></div>
     </div>

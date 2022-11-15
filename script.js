@@ -28,12 +28,14 @@ btnAdd.addEventListener("click", () => {
     localStorage.setItem("text", JSON.stringify(data_result))
     
     displayNotes()
+    notesInput.value = "";
+    titleInput.value = "";
   } else {
     notesInput.focus()
   }
 
   btnModal.parentElement.classList.remove("absolute");
-  btnModal.parentElement.classList.add("fixed")
+  btnModal.parentElement.classList.add("fixed");
 })
 
 var notes = ""
@@ -52,8 +54,8 @@ function displayNotes() {
     const title = document.createElement("div");
     
     // styling
-    content.classList.add("bg-glass", "rounded-md", "mt-2")
-    container.classList.add("w-72", "p-5", "bg-glass", "m-4", "rounded-r-md","rounded-l-sm", "notess", "border-l-2", "border-pink-600")
+    content.classList.add("bg-glass", "rounded-md", "mt-2", "mb-4")
+    container.classList.add("w-72", "p-5", "bg-glass", "m-4", "rounded-md", "notess",  "border-l-2", "border-pink-600", "shadow-md")
     title.classList.add("text-xl");
     tools.classList.add("flex", "justify-between");
     edit.classList.add('flex', 'items-center', "bg-pink-600", "px-2","py-1.5", "rounded-md", "float-right");
@@ -72,12 +74,12 @@ function displayNotes() {
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
     </svg>&nbsp;Edit`;
-    content.innerHTML = `<textarea type="text" class="bg-transparent text-white border-none outline-none resize-none box-border w-full h-44 p-3 overflow-y-auto  " readonly >${element.text}
+    content.innerHTML = `<textarea type="text" class="bg-transparent text-white border-none outline-none resize-none box-border w-full h-44 overflow-y-auto p-2 " readonly >${element.text}
     </textarea>`;
     date.innerHTML = `${element.createAt}`;
     title.innerHTML = `<h2 class="text-2xl font-medium">${element.title}</h2>`;
 
-    // display => container
+    // display Element
     tools.appendChild(fakeElement);
     tools.appendChild(deleteButton);
     container.appendChild(tools)
@@ -85,12 +87,10 @@ function displayNotes() {
     container.appendChild(date)
     container.appendChild(content)
     container.appendChild(edit);
-
     result.appendChild(container)
 
-    const tombolHapus = tools.querySelector(".delete-btn");
-
-    tombolHapus.addEventListener("click", (index) => {
+    const btnDelete = tools.querySelector(".delete-btn");
+    btnDelete.addEventListener("click", (index) => {
       data_result = data_result.filter(e => {
         if (e != element) {
           return index;
