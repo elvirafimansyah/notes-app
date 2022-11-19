@@ -74,15 +74,14 @@
     </div>
     <div id="search-filter"></div>
     <!-- Edit Modal -->
-    <div class="relative z-10 " aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="hidden relative z-10 " id="edit-modal" aria-labelledby="edit-modal" role="dialog" aria-modal="true">
       <div class="fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity"></div>
       <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex min-h-full justify-center p-4 text-center items-center sm:p-0">
           <div class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md">
             <div class="bg-gray-700 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <button type="button"
-                class="absolute top-3 right-2.5 text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-800 hover:text-white"
-                data-modal-toggle="input-notes">
+                class="absolute top-3 right-2.5 text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-glass hover:text-white close-btn" >
                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -91,28 +90,30 @@
                 <span class="sr-only">Close modal</span>
               </button>
               <div class="py-6 px-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-white">Add Your Notes</h3>
-                <form class="space-y-6" action="#">
+                <h3 class="mb-4 text-xl font-medium text-white flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                  <path fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                </svg>&nbsp;Edit Your Notes</h3>
+                <div class="space-y-6" >
                   <div>
                     <label for="title" class="block mb-2 text-sm font-medium  text-gray-300">Title</label>
-                    <input type="text" name="title" id="my-title"
+                    <input type="text" name="title" id="modal-title"
                       class=" border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white "
                       placeholder="Your Title" required="">
                   </div>
                   <div>
                   <label for="notes" class="block mb-2 text-sm font-medium text-gray-300">Your Notes</label>
-                  <textarea id="my-notes" name="notes" rows="5"
+                  <textarea id="modal-notes" name="notes" rows="5"
                     class="border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white resize-none"
                     placeholder="Notes Here.."></textarea>
                   </div>
                   <button type="button"
-                    class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center"
-                    data-modal-toggle="input-notes" id="btn-add"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                      fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                    </svg>&nbsp;Add Notes</button>
-                </form>
+                    class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center" id="edit-btn">
+                    Edit</button>
+                </div>
             </div>
           </div>
         </div>
