@@ -38,7 +38,6 @@ btnAdd.addEventListener("click", () => {
   btnModal.parentElement.classList.add("fixed");
 })
 
-var notes = ""
 
 function displayNotes() {
   result.innerHTML = "";
@@ -47,18 +46,17 @@ function displayNotes() {
     const container = document.createElement("div");
     const content = document.createElement("div");
     const tools = document.createElement("div")
-    const edit = document.createElement("button");
+    const edit = document.createElement("div");
     const deleteButton = document.createElement('button');
     const fakeElement = document.createElement("div");
     const date = document.createElement("h3"); 
     const title = document.createElement("div");
-    
     // styling
     content.classList.add("bg-glass", "rounded-md", "mt-2", "mb-4")
     container.classList.add("w-72", "p-5", "bg-glass", "m-4", "rounded-md", "notess",  "border-l-2", "border-pink-600", "shadow-md")
     title.classList.add("text-xl");
     tools.classList.add("flex", "justify-between");
-    edit.classList.add('flex', 'items-center', "bg-pink-600", "px-2","py-1.5", "rounded-md", "float-right");
+    // edit.classList.add('flex', 'items-center', "bg-pink-600", "px-2","py-1.5", "rounded-md", "float-right");
     date.classList.add("text-sm", "text-gray-200")
     // text
     
@@ -70,10 +68,23 @@ function displayNotes() {
       <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
       </svg>
     </button>`;
-    edit.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"    fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-    </svg>&nbsp;Edit`;
+
+    // Edit Button
+    
+    
+    edit.innerHTML = `
+      <button class="flex items-center bg-pink-600 px-2 py-1.5 rounded-md float-right " type="button" data-modal-toggle="edit-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg> &nbsp;
+        Edit
+      </button>
+      
+    `
+    
+  
+
     content.innerHTML = `<textarea type="text" class="bg-transparent text-white border-none outline-none resize-none box-border w-full h-44 overflow-y-auto p-2 " readonly >${element.text}
     </textarea>`;
     date.innerHTML = `${element.createAt}`;
@@ -86,7 +97,7 @@ function displayNotes() {
     container.appendChild(title);
     container.appendChild(date)
     container.appendChild(content)
-    container.appendChild(edit);
+    container.appendChild(edit)
     result.appendChild(container)
 
     const btnDelete = tools.querySelector(".delete-btn");
@@ -102,6 +113,7 @@ function displayNotes() {
 
     edit.addEventListener("click", () => {
       const input = content.querySelector("textarea");
+      
       input.removeAttribute("readonly")
       input.focus()
       input.classList.remove("pointer-events-none")
@@ -111,6 +123,7 @@ function displayNotes() {
         localStorage.setItem("text", JSON.stringify(data_result))
         displayNotes()
       })
+
     })
 
   });
@@ -135,3 +148,5 @@ function displayNotes() {
 if (localStorage.getItem("text")) {
   displayNotes()
 }
+
+
