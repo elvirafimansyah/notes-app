@@ -38,7 +38,6 @@ btnAdd.addEventListener("click", () => {
   btnModal.parentElement.classList.add("fixed");
 })
 
-
 function displayNotes() {
   result.innerHTML = "";
   data_result.forEach(element => {
@@ -78,8 +77,10 @@ function displayNotes() {
     </svg>&nbsp;Edit
     `
 
-    content.innerHTML = `<textarea type="text" class="bg-transparent text-white border-none outline-none resize-none box-border w-full h-44 overflow-y-auto p-2 " readonly >${element.text}
-    </textarea>`;
+    content.innerHTML = `<div class="bg-transparent text-white border-none outline-none w-full h-44 overflow-y-auto p-2" >
+      ${element.text}
+      
+    </div>`;
     date.innerHTML = `${element.createAt}`;
     title.innerHTML = `<h2 class="text-2xl font-medium break-all">${element.title}</h2>`;
 
@@ -156,5 +157,3 @@ function displayNotes() {
 if (localStorage.getItem("text")) {
   displayNotes()
 }
-
-
