@@ -4,6 +4,7 @@ const btnAdd = document.querySelector("#btn-add");
 const result = document.getElementById("result");
 const btnModal = document.getElementById("btn-modal");
 const searchInput = document.getElementById("search-navbar");
+let exactText;
 
 btnModal.addEventListener("click", () => {
   btnModal.parentElement.classList.remove("fixed");
@@ -37,6 +38,8 @@ btnAdd.addEventListener("click", () => {
   btnModal.parentElement.classList.remove("absolute");
   btnModal.parentElement.classList.add("fixed");
 })
+
+
 
 function displayNotes() {
   result.innerHTML = "";
@@ -125,13 +128,20 @@ function displayNotes() {
       editBtn.addEventListener("click", () => {
         const reccValueTitle = modalTitle.value;
         const reccValueNotes = modalNotes.value;
-
         element.title = reccValueTitle;
         element.text = reccValueNotes;
         localStorage.setItem("text", JSON.stringify(data_result));
 
         editModal.classList.add("hidden")
         displayNotes()
+      });
+
+      // Window Selection Text 
+      document.addEventListener("mouseup", event => {
+        if (window.getSelection.toString().length) {
+          exactText = window.getSelection().toString();
+          console.log(exactText)
+        }
       });
     })
 
@@ -153,6 +163,12 @@ function displayNotes() {
     })
   });
 }
+
+
+
+
+
+
 
 if (localStorage.getItem("text")) {
   displayNotes()
