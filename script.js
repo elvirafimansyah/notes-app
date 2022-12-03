@@ -139,7 +139,6 @@ function displayNotes() {
           if (elementName === "ul") {
             console.log(elementName)
             insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, pasteTarget)
-            const begin = this.selectionStart
           } else {
             console.log(elementName)
             insertText(`<${elementName}></${elementName}>`, pasteTarget)
