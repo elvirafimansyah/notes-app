@@ -132,10 +132,36 @@ function displayNotes() {
 
       const commandButton = document.querySelectorAll("#btn-command");
       for (let i = 0; i < commandButton.length; i++) {
+        const btnCont = document.querySelector(".actions");
+        const pasteTarget = btnCont.getAttribute("data-for")
         commandButton[i].addEventListener("click", (e) => {
-        
+          const elementName = e.target.getAttribute("data")
+          if (elementName === "ul") {
+            console.log(elementName)
+            insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, pasteTarget)
+            const begin = this.selectionStart
+          } else {
+            console.log(elementName)
+            insertText(`<${elementName}></${elementName}>`, pasteTarget)
+          }
         })
       };  
+
+      modalNotes.addEventListener("keydown", function(e) {
+        if (e.key == 'Tab') {
+          e.preventDefault();
+          var start = this.selectionStart;
+          var end = this.selectionEnd;
+
+          // set textarea value to: text before caret + tab + text after caret
+          this.value = this.value.substring(0, start) +
+            "\t" + this.value.substring(end);
+
+          // put caret at right position again
+          this.selectionStart =
+            this.selectionEnd = start + 1;
+        }
+      })
 
       function insertText(newText, selector) {
         const textarea = document.querySelector(selector);
