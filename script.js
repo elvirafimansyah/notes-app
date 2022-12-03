@@ -1,5 +1,6 @@
 const titleInput = document.getElementById("my-title")
 const notesInput = document.getElementById("my-notes");
+const addModal = document.getElementById("add-modal");
 const btnAdd = document.querySelector("#btn-add");
 const result = document.getElementById("result");
 const btnModal = document.getElementById("btn-modal");
@@ -7,8 +8,17 @@ const searchInput = document.getElementById("search-navbar");
 let exactText;
 
 btnModal.addEventListener("click", () => {
+  addModal.classList.remove("hidden");
+
+  
+
   btnModal.parentElement.classList.remove("fixed");
   btnModal.parentElement.classList.add("absolute")
+
+  const closeAddModal = document.querySelector(".close-add-modal");
+  closeAddModal.addEventListener("click", () => {
+    addModal.classList.add("hidden")
+  })
 })
 
 let data_result = JSON.parse(localStorage.getItem("text")) || [];
@@ -37,8 +47,8 @@ btnAdd.addEventListener("click", () => {
 
   btnModal.parentElement.classList.remove("absolute");
   btnModal.parentElement.classList.add("fixed");
+  addModal.classList.add("hidden");
 })
-
 
 
 function displayNotes() {
@@ -82,7 +92,6 @@ function displayNotes() {
 
     content.innerHTML = `<div class="bg-transparent text-white border-none outline-none w-full h-44 overflow-y-auto p-2" >
       ${element.text}
-      
     </div>`;
     date.innerHTML = `${element.createAt}`;
     title.innerHTML = `<h2 class="text-2xl font-medium break-all">${element.title}</h2>`;
@@ -121,6 +130,32 @@ function displayNotes() {
         editModal.classList.add("hidden");
       });
 
+      const commandButton = document.querySelectorAll("#btn-command");
+      for (let i = 0; i < commandButton.length; i++) {
+        commandButton[i].addEventListener("click", (e) => {
+        
+        })
+      };  
+
+      function insertText(newText, selector) {
+        const textarea = document.querySelector(selector);
+        textarea.focus();
+
+        let pasted = true;
+        try {
+          if (!document.execCommand("insertText", false, newText)) {
+            pasted = false;
+          }
+        } catch (e) {
+          console.error('error caught:', e);
+          pasted = false;
+        }
+
+        if (!pasted) {
+          console.error('paste unsuccessful, execCommand not supported');
+        }
+      }
+
       // Set Value Modal
       modalTitle.value = `${element.title}`
       modalNotes.value = `${element.text}`
@@ -145,6 +180,8 @@ function displayNotes() {
       });
     })
 
+   
+
   });
 
   // Search Filter
@@ -163,12 +200,6 @@ function displayNotes() {
     })
   });
 }
-
-
-
-
-
-
 
 if (localStorage.getItem("text")) {
   displayNotes()

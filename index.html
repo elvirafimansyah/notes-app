@@ -110,6 +110,181 @@
                       <div class="flex items-center justify-between px-3 py-2 border-b border-gray-600">
                         <div class="flex flex-wrap items-center sm:divide-x divide-gray-600">
                           <div class="flex items-center space-x-1 sm:pr-4">
+                            <button type="button" id="btn-command" data="insertOrderedList"
+                              class="p-2  rounded cursor-pointer text-gray-400 hover:text-white hover:bg-gray-600">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                  d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                              </svg>
+                              <span class="sr-only">List</span>
+                            </button>
+                            <button type="button" id="btn-command" data="italic"
+                              class="p-2 rounded cursor-pointer text-gray-400 hover:text-white hover:bg-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-type-italic"
+                              viewBox="0 0 16 16">
+                              <path
+                                d="M7.991 11.674 9.53 4.455c.123-.595.246-.71 1.347-.807l.11-.52H7.211l-.11.52c1.06.096 1.128.212 1.005.807L6.57 11.674c-.123.595-.246.71-1.346.806l-.11.52h3.774l.11-.52c-1.06-.095-1.129-.211-1.006-.806z" />
+                            </svg>
+                              <span class="sr-only">Italic</span>
+                            </button>
+                            <button type="button" id="btn-command" data="bold"
+                              class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-type-bold"
+                                viewBox="0 0 16 16">
+                                <path
+                                  d="M8.21 13c2.106 0 3.412-1.087 3.412-2.823 0-1.306-.984-2.283-2.324-2.386v-.055a2.176 2.176 0 0 0 1.852-2.14c0-1.51-1.162-2.46-3.014-2.46H3.843V13H8.21zM5.908 4.674h1.696c.963 0 1.517.451 1.517 1.244 0 .834-.629 1.32-1.73 1.32H5.908V4.673zm0 6.788V8.598h1.73c1.217 0 1.88.492 1.88 1.415 0 .943-.643 1.449-1.832 1.449H5.907z" />
+                              </svg>
+                              <span class="sr-only">Bold</span>
+                            </button>
+                            <button type="button" id="btn-command" data="underline"
+                              class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-type-underline"
+                                viewBox="0 0 16 16">
+                                <path
+                                  d="M5.313 3.136h-1.23V9.54c0 2.105 1.47 3.623 3.917 3.623s3.917-1.518 3.917-3.623V3.136h-1.23v6.323c0 1.49-.978 2.57-2.687 2.57-1.709 0-2.687-1.08-2.687-2.57V3.136zM12.5 15h-9v-1h9v1z" />
+                              </svg>
+                              <span class="sr-only">Underline</span>
+                            </button>
+                            <button type="button"
+                              class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                                  clip-rule="evenodd"></path>
+                              </svg>
+                              <span class="sr-only">Add emoji</span>
+                            </button>
+                          </div>
+                          <div class="flex flex-wrap items-center space-x-1 sm:pl-4">
+                            <button type="button"
+                              class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                  clip-rule="evenodd"></path>
+                              </svg>
+                              <span class="sr-only">Add list</span>
+                            </button>
+                            <button type="button"
+                              class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                  clip-rule="evenodd"></path>
+                              </svg>
+                              <span class="sr-only">Settings</span>
+                            </button>
+                            <button type="button"
+                              class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                  clip-rule="evenodd"></path>
+                              </svg>
+                              <span class="sr-only">Timeline</span>
+                            </button>
+                            <button type="button"
+                              class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                              </svg>
+                              <span class="sr-only">Download</span>
+                            </button>
+                          </div>
+                        </div>
+                        <button type="button" data-tooltip-target="tooltip-fullscreen"
+                          class="p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                              d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <span class="sr-only">Full screen</span>
+                        </button>
+                        <div id="tooltip-fullscreen" role="tooltip"
+                          class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                          Show full screen
+                          <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                      </div>
+                      <div class="px-4 py-2  rounded-b-lg bg-gray-600  ">
+                        <textarea id="modal-notes" name="notes" rows="5"
+                          class=" text-sm   block w-full border-none  bg-gray-600  placeholder-gray-400 text-white resize-none"
+                          placeholder="Notes Here.."></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Text area -->
+                  <button type="button"
+                    class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center" id="edit-btn">
+                    Edit</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Edit Modal -->
+  </section>
+  <section id="add-bottom"
+    class="fixed bottom-0 left-0 w-full  p-5 rounded-lg shadow flex items-center justify-center md:p-6 bg-gray-900">
+    <button data-tooltip-target="tooltip-add"
+      class="absolute top-[-2rem] w-16 h-16 text-center border-none outline-none bg-pink-600 text-white  rounded-full flex items-center justify-center"
+      type="button" id="btn-modal" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-lg"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+      </svg>
+    </button>
+    <div id="tooltip-add" role="tooltip"
+      class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-md opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+      Add Notes
+      <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+    <!-- Add Notes Modal -->
+    <div class="hidden relative z-10 " id="add-modal" aria-labelledby="edit-modal" role="dialog" aria-modal="true">
+      <div class="fixed inset-0 bg-gray-400 bg-opacity-75 transition-opacity"></div>
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div class="flex min-h-full justify-center p-4 text-center items-center sm:p-0">
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
+            <div class="bg-gray-700 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <button type="button"
+                class="absolute top-3 right-2.5 text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-glass hover:text-white close-add-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+              </button>
+              <div class="py-6 px-6 lg:px-8">
+                <h3 class="mb-4 text-xl font-medium text-white flex items-center">Add Your Notes</h3>
+                <div class="space-y-6">
+                  <div>
+                    <label for="title" class="block mb-2 text-sm font-medium  text-gray-300">Title</label>
+                    <input type="text" name="title" id="my-title"
+                      class=" border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white "
+                      placeholder="Your Title" required="">
+                  </div>
+                  <!-- Textarea -->
+                  <div>
+                    <label for="notes" class="block mb-2 text-sm font-medium text-gray-300">Your Notes</label>
+                    <div class="w-full mb-4 border rounded-lg bg-gray-700 border-gray-600">
+                      <div class="flex items-center justify-between px-3 py-2 border-b border-gray-600">
+                        <div class="flex flex-wrap items-center sm:divide-x divide-gray-600">
+                          <div class="flex items-center space-x-1 sm:pr-4">
                             <button type="button"
                               class="p-2  rounded cursor-pointer text-gray-400 hover:text-white hover:bg-gray-600">
                               <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -221,197 +396,25 @@
                         </div>
                       </div>
                       <div class="px-4 py-2  rounded-b-lg bg-gray-600  ">
-                        <textarea id="modal-notes" name="notes" rows="5"
-                          class=" text-sm   block w-full border-none  bg-gray-600  placeholder-gray-400 text-white resize-none"
-                          placeholder="Notes Here.."></textarea>
+                        <textarea id="my-notes" name="notes" rows="5"
+                          class=" text-sm  block w-full border-none  bg-gray-600  placeholder-gray-400 text-white resize-none"
+                          placeholder="Notes Here..">
+                        </textarea>
                       </div>
                     </div>
                   </div>
                   <!-- Text area -->
                   <button type="button"
-                    class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center" id="edit-btn">
-                    Edit</button>
+                    class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center"
+                    id="btn-add">
+                    Add</button>
                 </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Edit Modal -->
-  </section>
-  <section id="add-bottom" class="fixed bottom-0 left-0 w-full  p-5 rounded-lg shadow flex items-center justify-center md:p-6 bg-gray-900">
-    <button data-tooltip-target="tooltip-add"  class="absolute top-[-2rem] w-16 h-16 text-center border-none outline-none bg-pink-600 text-white  rounded-full flex items-center justify-center" type="button" id="btn-modal"
-      data-modal-toggle="input-notes">
-      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-lg"
-        viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-      </svg>
-    </button>
-    <div id="tooltip-add" role="tooltip"
-      class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-md opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
-      Add Notes
-      <div class="tooltip-arrow" data-popper-arrow></div>
-    </div>
-    <!-- Main modal -->
-    <div id="input-notes" tabindex="-1" aria-hidden="true"
-      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
-      <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-        <!-- Modal content -->
-        <div class="relative rounded-lg shadow bg-gray-700">
-          <button type="button"
-            class="absolute top-3 right-2.5 text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-800 hover:text-white"
-            data-modal-toggle="input-notes">
-            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-            </svg>
-            <span class="sr-only">Close modal</span>
-          </button>
-          <div class="py-6 px-6 lg:px-8 ">
-            <h3 class="mb-4 text-xl font-medium text-white">Add Your Notes</h3>
-            <form class="space-y-6" action="#">
-              <div>
-                <label for="title" class="block mb-2 text-sm font-medium  text-gray-300">Title</label>
-                <input type="text" name="title" id="my-title"
-                  class=" border  text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
-                  placeholder="Your Title" required="">
-              </div>
-              <div>
-                <label for="notes" class="block mb-2 text-sm font-medium text-gray-300">Your Notes</label>
-                <div class="w-full mb-4 border rounded-lg bg-gray-700 border-gray-600">
-                  <div class="flex items-center justify-between px-3 py-2 border-b border-gray-600">
-                    <div class="flex flex-wrap items-center sm:divide-x divide-gray-600">
-                      <div class="flex items-center space-x-1 sm:pr-4">
-                        <button type="button" class="p-2  rounded cursor-pointer text-gray-400 hover:text-white hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Attach file</span>
-                        </button>
-                        <button type="button" class="p-2 rounded cursor-pointer text-gray-400 hover:text-white hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Embed map</span>
-                        </button>
-                        <button type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Upload image</span>
-                        </button>
-                        <button type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Format code</span>
-                        </button>
-                        <button type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Add emoji</span>
-                        </button>
-                      </div>
-                      <div class="flex flex-wrap items-center space-x-1 sm:pl-4">
-                        <button type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Add list</span>
-                        </button>
-                        <button type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Settings</span>
-                        </button>
-                        <button type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Timeline</span>
-                        </button>
-                        <button type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                          <span class="sr-only">Download</span>
-                        </button>
-                      </div>
-                    </div>
-                    <button type="button" data-tooltip-target="tooltip-fullscreen"
-                      class="p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-                      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                          d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z"
-                          clip-rule="evenodd"></path>
-                      </svg>
-                      <span class="sr-only">Full screen</span>
-                    </button>
-                    <div id="tooltip-fullscreen" role="tooltip"
-                      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                      Show full screen
-                      <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                  </div>
-                  <div class="px-4 py-2  rounded-b-lg bg-gray-600  ">
-                    <textarea id="my-notes" name="notes" rows="5"
-                      class=" text-sm   block w-full border-none  bg-gray-600  placeholder-gray-400 text-white resize-none"
-                      placeholder="Notes Here.."></textarea>
-                  </div>
-                </div>
-              </div>
-              <button type="button"
-                class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-pink-600 hover:bg-pink-700 flex items-center justify-center"
-                data-modal-toggle="input-notes" id="btn-add"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                  fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                </svg>&nbsp;Add Notes</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Add Notes Modal -->
   </section>
 
   <script src="script.js"></script>
