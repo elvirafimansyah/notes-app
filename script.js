@@ -130,21 +130,29 @@ function displayNotes() {
         editModal.classList.add("hidden");
       });
 
+      // style button element
+      const btnCont = document.querySelector(".actions");
+      const btnAddCont = document.querySelector(".actions-add")
+      const pasteTarget = btnCont.getAttribute("data-for");
+      const pasteTargetAdd = btnAddCont.getAttribute("data-for");
       const commandButton = document.querySelectorAll("#btn-command");
-      for (let i = 0; i < commandButton.length; i++) {
-        const btnCont = document.querySelector(".actions");
-        const pasteTarget = btnCont.getAttribute("data-for")
-        commandButton[i].addEventListener("click", (e) => {
-          const elementName = e.target.getAttribute("data")
-          if (elementName === "ul") {
-            console.log(elementName)
-            insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, pasteTarget)
-          } else {
-            console.log(elementName)
-            insertText(`<${elementName}></${elementName}>`, pasteTarget)
-          }
-        })
-      };  
+      const commandAddButton = document.querySelectorAll("#btn-add-command");
+
+      function styleText(button, target) {
+        for (let i = 0; i < button.length; i++) {
+          button[i].addEventListener("click", (e) => {
+            const elementName = e.target.getAttribute("data")
+            if (elementName === "ul") {
+              insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, target)
+            } else {
+              insertText(`<${elementName}></${elementName}>`, target)
+            }
+          })
+        };  
+      }
+
+      styleText(commandButton, pasteTarget);
+      styleText(commandAddButton, pasteTargetAdd);
 
       modalNotes.addEventListener("keydown", function(e) {
         if (e.key == 'Tab') {
