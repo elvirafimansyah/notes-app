@@ -23,6 +23,8 @@
       }
     }
   </script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <link rel="stylesheet" href="style/atom-one-dark.css">
 </head>
 <body class="bg-slate-900 ">
   <!-- Navbar -->
@@ -66,11 +68,11 @@
       <!-- Sidebar starts -->
       <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
       <div 
-        class="w-64 h-full fixed z-1 top-0 left-0 bg-slate-900 shadow md:h-full flex-col justify-between hidden sm:flex">
+        class="w-64 h-full fixed z-1 top-0 left-0 bg-slate-900 shadow md:h-full flex-col justify-between hidden md:flex">
         <div class="px-8">
           <a href="/" class="flex items-center px-4 py-4">
             <img src="src/img/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> Emore</span>
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Emore</span>
           </a>
           <ul class="mt-12">
             <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
@@ -84,23 +86,13 @@
               </a>
             </li>
           </ul>
-          <div class="flex justify-center mt-48 mb-4 w-full">
-            <div class="relative">
-              <div class="text-gray-300 absolute ml-4 inset-0 m-auto w-4 h-4">
-                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_icons_at_bottom-svg2.svg" alt="Search">
-              </div>
-              <input
-                class="bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-100 rounded w-full text-sm text-gray-300 placeholder-gray-400 bg-gray-100 pl-10 py-2"
-                type="text" placeholder="Search" />
-            </div>
-          </div>
         </div>
       </div>
       <div
-        class="w-60 h-full fixed z-40 top-0 left-0 bg-slate-900 shadow md:h-full flex-col justify-between sm:hidden transition duration-150 ease-in-out"
+        class="w-60 h-full fixed z-40 top-0 left-0 bg-slate-900 shadow md:h-full flex-col justify-between  transition duration-150 ease-in-out"
         id="mobile-nav">
         <button aria-label="toggle sidebar" id="openSideBar"
-          class="h-10 w-10 bg-gray-800 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded focus:ring-gray-800"
+          class="h-10 w-10 bg-gray-800 md:hidden absolute right-0 mt-16 -mr-[4.8rem] sm:-mr-24 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded focus:ring-gray-800"
           onclick="sidebarHandler(true)">
           <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_icons_at_bottom-svg7.svg" alt="toggler">
         </button>
@@ -112,7 +104,7 @@
         <div class="px-8">
           <a href="/" class="flex items-center px-4 py-4  " >
             <img src="src/img/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> Emore</span>
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Emore</span>
           </a>
           <ul class="mt-12">
             <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
@@ -126,77 +118,30 @@
               </a>
             </li>
           </ul>
-          <div class="flex justify-center mt-48 mb-4 w-full">
-            <div class="relative">
-              <div class="text-gray-300 absolute ml-4 inset-0 m-auto w-4 h-4">
-                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_icons_at_bottom-svg2.svg" alt="Search">
-              </div>
-              <input
-                class="bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-100  rounded w-full text-sm text-gray-300 placeholder-gray-400 bg-gray-100 pl-10 py-2"
-                type="text" placeholder="Search" />
-            </div>
-          </div>
-        </div>
-        <div class="px-8 border-t border-gray-700">
-          <ul class="w-full flex items-center justify-between bg-gray-800">
-            <li class="cursor-pointer text-white pt-5 pb-3">
-              <button aria-label="show notifications" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
-                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_icons_at_bottom-svg3.svg"
-                  alt="notifications">
-              </button>
-            </li>
-          </ul>
+          
         </div>
       </div>
       <!-- Sidebar ends -->
-      <div class="container mx-auto py-10 h-64 md:w-4/5 w-11/12 lg:pl-56">
-        <div
-          class="inline-block text-pink-500 focus:outline-none font-medium rounded-lg text-sm px-5 py-1.5 mr-2 mb-2 bg-gray-800 hover:bg-gray-700 focus:ring-gray-700 border-gray-700">Docs</div>
+      <div class="container mx-auto py-16 md:py-10 h-64 md:w-4/5 w-11/12 md:pl-56">
+        <div class="inline-block text-pink-500 focus:outline-none font-medium rounded-lg text-sm px-5 py-1.5 mr-2 mb-2 bg-gray-800 hover:bg-gray-700 focus:ring-gray-700 border-gray-700">Docs</div>
         <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white ">Emore Notes - Documentation</h1>
         <p class="my-5 text-lg text-slate-400">The Emore note is a great helper for organizing your schedule and notes. It gives you a quick and easy notepad editing
           experience when you write notes, memos, emails, messages, to-do lists, and assignment lists.</p>
-        <hr class="my-3 h-pxborder-0 bg-gray-700">
-        <div class="code-wrapper " >
-          <pre class="text-white ">
-            <code id="code" >
-              function app () { 
-                console.log(app)
-              }
+        <hr class="my-3 h-px border-0 bg-gray-700">
+         <pre class="whitespace-pre-wrap break-words relative" style="overflow-x: auto;">
+           <code class="language-js hljs ">
+npm start npm start npm start npm start npm start npm start npm start npm start npm start npm start npm start 
             </code>
           </pre>
-          <button id="copy-button">copy</button>
-          <div id="toast-success"
-            class="flex absolute bottom-2 items-center p-4 mb-4 w-full max-w-xs rounded-lg shadow text-gray-400 bg-gray-800"
-            role="alert">
-            <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8  rounded-lg bg-green-800 text-green-200">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill"
-                viewBox="0 0 16 16">
-                <path
-                  d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
-                <path
-                  d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
-              </svg>
-              <span class="sr-only">Check icon</span>
-            </div>
-            <div class="ml-3 text-sm font-normal">Code Copied</div>
-            <button type="button"
-              class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-              data-dismiss-target="#toast-success" aria-label="Close">
-              <span class="sr-only">Close</span>
-              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
+          
       </div>
     </div>
   </main>
-  <!-- End Content -->
   
+  <!-- End Content -->
   <script src="scripts/sideBar.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>
 </html>
