@@ -14,3 +14,29 @@ function sidebarHandler(flag) {
     openSidebar.classList.remove("hidden");
   }
 }
+
+// Copy Function
+document.addEventListener("DOMContentLoaded", () => {
+  const alertCopy = document.getElementById("toast-success");
+  hljs.highlightAll();
+
+  const copyBtn = document.getElementById("copy-button");
+  const bulletCode = document.querySelector(".bullet-list")
+  const text = bulletCode.innerText;
+    
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alertCopy.classList.remove("hidden");
+      setTimeout(() => {
+        alertCopy.classList.toggle('hidden');
+      }, 2500);
+    })
+  }
+  
+  copyBtn.addEventListener("click", () => {
+    copyText(text)
+  })
+  /*======== Bulleted List =======*/
+})
+
+

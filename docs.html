@@ -23,12 +23,13 @@
       }
     }
   </script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-  <link rel="stylesheet" href="style/atom-one-dark.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <link rel="stylesheet" href="style/atom-one-dark.css"> -->
+  <link rel="stylesheet" href="style/dracula.css">  
 </head>
-<body class="bg-slate-900 ">
+<body class="bg-dark ">
   <!-- Navbar -->
-  <nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-gray-900 ">
+  <nav class="border-gray-200 px-2 sm:px-4 py-2 md:py-0 rounded bg-gray-900 ">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <a href="/" class="flex items-center ml-2">
         <img src="src/img/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
@@ -45,16 +46,16 @@
             clip-rule="evenodd"></path>
         </svg>
       </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <div class="hidden w-full md:block md:w-auto " id="navbar-default">
         <ul
-          class="flex flex-col p-4 mt-4 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white bg-gray-800 md:bg-gray-900 border-gray-700">
-          <li>
+          class="flex flex-col p-4 mt-16 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white bg-gray-800 md:bg-gray-900 border-gray-700 ">
+          <li class="md:hover:bg-gray-800 px-4 py-2.5 rounded-md">
             <a href="docs.html"
-              class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Docs</a>
+              class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400  hover:bg-gray-700 hover:text-white md:hover:bg-transparent ">Docs</a>
           </li>
-          <li>
+          <li class="md:hover:bg-gray-800 px-4 py-2.5 rounded-md">
             <a href="#"
-              class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Contact</a>
+              class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400  hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Contact</a>
           </li>
         </ul>
       </div>
@@ -68,19 +69,24 @@
       <!-- Sidebar starts -->
       <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
       <div 
-        class="w-64 h-full fixed z-1 top-0 left-0 bg-slate-900 shadow md:h-full flex-col justify-between hidden md:flex">
+        class="w-64 h-full fixed z-1 top-0 left-0 bg-gray-900 shadow md:h-full flex-col justify-between hidden md:flex">
         <div class="px-8">
           <a href="/" class="flex items-center px-4 py-4">
             <img src="src/img/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
             <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Emore</span>
           </a>
           <ul class="mt-12">
-            <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
-              <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+            <li class="flex w-full justify-between text-pink-500 font-medium cursor-pointer items-center mb-6">
+              <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white ">
+                <span class="text-sm ml-2">Table Of Contents</span>
+              </a>
+            </li>
+            <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white">
+              <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white ">
                 <span class="text-sm ml-2">Dashboard</span>
               </a>
             </li>
-            <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+            <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md">
               <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                 <span class="text-sm ml-2">Products</span>
               </a>
@@ -118,22 +124,72 @@
               </a>
             </li>
           </ul>
-          
         </div>
       </div>
       <!-- Sidebar ends -->
-      <div class="container mx-auto py-16 md:py-10 h-64 md:w-4/5 w-11/12 md:pl-56">
-        <div class="inline-block text-pink-500 focus:outline-none font-medium rounded-lg text-sm px-5 py-1.5 mr-2 mb-2 bg-gray-800 hover:bg-gray-700 focus:ring-gray-700 border-gray-700">Docs</div>
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white ">Emore Notes - Documentation</h1>
-        <p class="my-5 text-lg text-slate-400">The Emore note is a great helper for organizing your schedule and notes. It gives you a quick and easy notepad editing
+      <div class="container mx-auto py-16 md:py-10 h-64 md:w-4/5 w-11/12 md:pl-56 ">
+        <div class="inline-block text-pink-500 focus:outline-none font-medium rounded-lg text-xs md: text-sm px-5 py-1.5 mr-2 mb-2 bg-gray-800 hover:bg-gray-700 focus:ring-gray-700 border-gray-700">Docs</div>
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight text-white ">Emore Notes - Documentation</h1>
+        <p class="my-5 text-sm md:text-lg text-slate-400 break-all">Emore Notes is a great helper for organizing your schedule and notes. It gives you a quick and easy notepad editing
           experience when you write notes, memos, emails, messages, to-do lists, and assignment lists.</p>
         <hr class="my-3 h-px border-0 bg-gray-700">
-         <pre class="whitespace-pre-wrap break-words relative" style="overflow-x: auto;">
-           <code class="language-js hljs ">
-npm start npm start npm start npm start npm start npm start npm start npm start npm start npm start npm start 
-            </code>
-          </pre>
-          
+        <!-- Bullet List -->
+        <section >
+          <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Bulleted List</h1>
+          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to create a default unordered list of items</p>
+          <div>
+            <div class="preview text-white">
+              <ul>
+                <li class="list-disc list-inside">items 1</li>
+                <li class="list-disc list-inside">items 2</li>
+                <li class="list-disc list-inside">items 3</li>
+              </ul>
+            </div>
+            <p class="bg-gray-800">HTML</p>
+            <div class="code-wrapper relative">
+              <pre class="whitespace-pre-wrap" >
+                <code class="html hljs bullet-list">
+<span><</span>ul<span>></span>
+  <span><</span>li class="list-disc list-inside"<span>></span>items 1<span><</span>/li<span>></span>
+  <span><</span>li class="list-disc list-inside"<span>></span>items 2<span><</span>/li<span>></span>
+  <span><</span>li class="list-disc list-inside"<span>></span>items 3<span><</span>/li<span>></span>
+<span><</span>/ul<span>></span>
+                </code>
+              </pre>
+              <button id="copy-button" class="absolute bg-gray-900 px-4 py-2 rounded-lg top-8 right-2 text-pink-500 font-medium flex items-center shadow-md"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard-fill"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z" />
+              </svg>&nbsp;Copy</button>
+            </div>
+          </div>
+        </section>
+        <!-- End Bullet List -->
+        <div id="toast-success"
+          class="flex absolute bottom-2 items-center p-4 mb-4 w-full max-w-xs rounded-lg shadow text-gray-400 bg-gray-800 hidden "
+          role="alert">
+          <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8  rounded-lg bg-green-800 text-green-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+              <path
+                d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+              <path
+                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
+            </svg>
+            <span class="sr-only">Check icon</span>
+          </div>
+          <div class="ml-3 text-sm font-normal">Code Copied</div>
+          <button type="button"
+            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+            data-dismiss-target="#toast-success" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </main>
