@@ -1,7 +1,10 @@
+pre > code {
+  margin-top: -1.5em;
+}
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 2rem;
+  padding: 0 2em;
   background: #282a36;
 }
 

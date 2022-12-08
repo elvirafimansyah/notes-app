@@ -17,13 +17,8 @@ function sidebarHandler(flag) {
 
 // Copy Function
 document.addEventListener("DOMContentLoaded", () => {
-  const alertCopy = document.getElementById("toast-success");
   hljs.highlightAll();
-
-  const copyBtn = document.getElementById("copy-button");
-  const bulletCode = document.querySelector(".bullet-list")
-  const text = bulletCode.innerText;
-    
+  const alertCopy = document.getElementById("toast-success");
   function copyText(text) {
     navigator.clipboard.writeText(text).then(() => {
       alertCopy.classList.remove("hidden");
@@ -32,10 +27,28 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 2500);
     })
   }
-  
-  copyBtn.addEventListener("click", () => {
-    copyText(text)
+  // Bullet Code 
+  const copyBullet = document.getElementById("copy-bullet");
+  const bulletCode = document.querySelector(".bullet-list")
+  const bulletText = bulletCode.innerText;
+  copyBullet.addEventListener("click", () => {
+    copyText(bulletText)
   })
+  // Italic
+  const copyItalic = document.getElementById("copy-italic")
+  const italicCode = document.querySelector(".italic-code"); 
+  const italicText = italicCode.innerText;
+  copyItalic.addEventListener("click", () => {
+    copyText(italicText);
+  });
+  // Bold
+  const copyBold = document.getElementById("copy-bold");  
+  const boldCode = document.querySelector(".bold-code");
+  const boldText = boldCode.innerText;
+  copyBold.addEventListener("click", () => {
+    copyText(boldText);
+  });
+
   /*======== Bulleted List =======*/
 })
 
