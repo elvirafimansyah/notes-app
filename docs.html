@@ -76,6 +76,12 @@
                 <span class="text-sm ml-2">Table Of Contents</span>
               </a>
             </li>
+            <li>
+              <a href="#usage"
+                class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white flex  items-center focus:outline-none  ">
+                <span class="text-sm ml-2">Quickstart</span>
+              </a>
+            </li>
             <li >
               <a href="#list" class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white flex  items-center focus:outline-none  ">
                 <span class="text-sm ml-2">List</span>
@@ -84,6 +90,18 @@
             <li>
               <a href="#section-italic" class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white flex  items-center focus:outline-none ">
                 <span class="text-sm ml-2">Italic</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section-bold"
+                class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white flex  items-center focus:outline-none ">
+                <span class="text-sm ml-2">Bold</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section-underline"
+                class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white flex  items-center focus:outline-none ">
+                <span class="text-sm ml-2">Underline</span>
               </a>
             </li>
           </ul>
@@ -108,14 +126,29 @@
             <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Emore</span>
           </a>
           <ul class="mt-12">
-            <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
-              <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                <span class="text-sm ml-2">Dashboard</span>
+            <li class="flex w-full justify-between text-pink-500 font-medium cursor-pointer items-center mb-6">
+              <a href="javascript:void(0)" class="flex items-center focus:outline-none  ">
+                <span class="text-sm ml-2">Table Of Contents</span>
               </a>
             </li>
-            <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
-              <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                <span class="text-sm ml-2">Products</span>
+            <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6 px-2">
+              <a href="#list" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                <span class="text-sm ml-2">List</span>
+              </a>
+            </li>
+            <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6 px-2">
+              <a href="#section-italic" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                <span class="text-sm ml-2">Italic</span>
+              </a>
+            </li>
+            <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6 px-2">
+              <a href="#section-bold" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                <span class="text-sm ml-2">Bold</span>
+              </a>
+            </li>
+            <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6 px-2">
+              <a href="#section-underline" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                <span class="text-sm ml-2">Underline</span>
               </a>
             </li>
           </ul>
@@ -128,6 +161,41 @@
         <p class="my-5 text-sm md:text-lg text-slate-400 break-all">Emore Notes is a great helper for organizing your schedule and notes. It gives you a quick and easy notepad editing
           experience when you write notes, memos, emails, messages, to-do lists, and assignment lists.</p>
         <hr class="my-3 h-px border-0 bg-gray-700">
+        <!-- Usage -->
+        <section id="list">
+          <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Bulleted
+            List</h1>
+          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to create a default unordered list of items</p>
+          <div>
+            <div class="preview text-white border border-gray-800 p-3">
+              <ul>
+                <li class="list-disc list-inside">items 1</li>
+                <li class="list-disc list-inside">items 2</li>
+                <li class="list-disc list-inside">items 3</li>
+              </ul>
+            </div>
+            <p class="bg-gray-700 py-1.5 px-2 text-white font-medium">HTML</p>
+            <div class="code-wrapper relative">
+              <pre class="whitespace-pre-wrap">
+                        <code class="html hljs bullet-list">
+        <span><</span>ul<span>></span>
+          <span><</span>li class="list-disc list-inside"<span>></span>items 1<span><</span>/li<span>></span>
+          <span><</span>li class="list-disc list-inside"<span>></span>items 2<span><</span>/li<span>></span>
+          <span><</span>li class="list-disc list-inside"<span>></span>items 3<span><</span>/li<span>></span>
+        <span><</span>/ul<span>></span>
+                        </code>
+                      </pre>
+              <button id="copy-bullet"
+                class="absolute bg-gray-900 px-4 py-2 rounded-lg top-2 right-2 text-pink-500 font-medium flex items-center shadow-md"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard-fill"
+                  viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z" />
+                </svg></button>
+            </div>
+          </div>
+        </section>
+        <!-- End Usage -->
         <!-- Bullet List -->
         <section id="list">
           <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Bulleted List</h1>
@@ -163,7 +231,7 @@
         <!-- Italic Font -->
         <section id="section-italic">
           <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Italicizing Text</h1>
-          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to make text italic</p>
+          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to make italic text</p>
           <div>
             <div class="preview text-white border border-gray-800 p-3">
               <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i> <br>
@@ -189,7 +257,7 @@
         <!-- Bold Font -->
         <section id="section-bold">
           <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Bold Text</h1>
-          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to make text bold</p>
+          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to make bold text</p>
           <div>
             <div class="preview text-white border border-gray-800 p-3">
               <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b> <br>
@@ -212,6 +280,33 @@
           </div>
         </section>
         <!-- End Bold Font -->
+        <!-- Underline Font -->
+        <section id="section-underline">
+          <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Underline Text
+          </h1>
+          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to make underline text</p>
+          <div>
+            <div class="preview text-white border border-gray-800 p-3">
+              <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit</u> <br>
+            </div>
+            <p class="bg-gray-700 py-1.5 px-2 text-white font-medium">HTML</p>
+            <div class="code-wrapper relative">
+              <pre class="whitespace-pre-wrap">
+                <code class="html hljs bold-code">
+<span><</span>u<span>></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit<span><</span>/u<span>></span>
+                </code>
+              </pre>
+              <button id="copy-bold"
+                class="absolute bg-gray-900 px-4 py-2 rounded-lg top-2 right-2 text-pink-500 font-medium flex items-center shadow-md"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard-fill"
+                  viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z" />
+                </svg></button>
+            </div>
+          </div>
+        </section>
+        <!-- End Underline Font -->
         <div id="toast-success"
           class="flex fixed bottom-0 items-center p-4 mb-4 w-full max-w-xs rounded-lg shadow text-gray-400 bg-gray-800 hidden "
           role="alert">
