@@ -47,13 +47,9 @@
       <div class="hidden w-full md:block md:w-auto " id="navbar-default">
         <ul
           class="flex flex-col p-4 mt-16 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white bg-gray-800 md:bg-gray-900 border-gray-700 ">
-          <li class="md:hover:bg-gray-800 px-4 py-2.5 rounded-md">
+          <li class="md:hover:bg-gray-800 md:px-4 md:py-2.5 rounded-md">
             <a href="docs.html"
               class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400  hover:bg-gray-700 hover:text-white md:hover:bg-transparent ">Docs</a>
-          </li>
-          <li class="md:hover:bg-gray-800 px-4 py-2.5 rounded-md">
-            <a href="#"
-              class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400  hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Contact</a>
           </li>
         </ul>
       </div>
@@ -79,7 +75,7 @@
             <li>
               <a href="#usage"
                 class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white flex  items-center focus:outline-none  ">
-                <span class="text-sm ml-2">Quickstart</span>
+                <span class="text-sm ml-2">Usage</span>
               </a>
             </li>
             <li >
@@ -132,6 +128,11 @@
               </a>
             </li>
             <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6 px-2">
+              <a href="#usage" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                <span class="text-sm ml-2">Usages</span>
+              </a>
+            </li>
+            <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6 px-2">
               <a href="#list" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                 <span class="text-sm ml-2">List</span>
               </a>
@@ -162,38 +163,31 @@
           experience when you write notes, memos, emails, messages, to-do lists, and assignment lists.</p>
         <hr class="my-3 h-px border-0 bg-gray-700">
         <!-- Usage -->
-        <section id="list">
-          <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Bulleted
-            List</h1>
+        <section id="usage">
+          <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Usage</h1>
           <p class="my-2 text-sm md:text-md text-slate-400">Use this example to create a default unordered list of items</p>
-          <div>
-            <div class="preview text-white border border-gray-800 p-3">
-              <ul>
-                <li class="list-disc list-inside">items 1</li>
-                <li class="list-disc list-inside">items 2</li>
-                <li class="list-disc list-inside">items 3</li>
-              </ul>
-            </div>
-            <p class="bg-gray-700 py-1.5 px-2 text-white font-medium">HTML</p>
-            <div class="code-wrapper relative">
-              <pre class="whitespace-pre-wrap">
-                        <code class="html hljs bullet-list">
-        <span><</span>ul<span>></span>
-          <span><</span>li class="list-disc list-inside"<span>></span>items 1<span><</span>/li<span>></span>
-          <span><</span>li class="list-disc list-inside"<span>></span>items 2<span><</span>/li<span>></span>
-          <span><</span>li class="list-disc list-inside"<span>></span>items 3<span><</span>/li<span>></span>
-        <span><</span>/ul<span>></span>
-                        </code>
-                      </pre>
-              <button id="copy-bullet"
-                class="absolute bg-gray-900 px-4 py-2 rounded-lg top-2 right-2 text-pink-500 font-medium flex items-center shadow-md"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard-fill"
-                  viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z" />
-                </svg></button>
-            </div>
-          </div>
+          <ol class="relative border-l border-gray-200 dark:border-gray-700">                  
+            <li class="mb-10 ml-8">
+              <div>
+                <div class="absolute w-7 h-7  mt-1.5 -left-3.5 border text-slate-300 border-gray-900 bg-gray-700 rounded-md">
+                  <span class="relative left-2 text-xs">1</span>
+                </div>
+              </div>
+              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Step 1</time>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Click add/edit notes button</h3>
+              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">After clicking the add/edit button, a modal with the input title and notes will show up.</p>
+            </li>
+            <li class="mb-10 ml-8">
+              <div>
+                <div class="absolute w-7 h-7  mt-1.5 -left-3.5 border text-slate-300 border-gray-900 bg-gray-700 rounded-md">
+                  <span class="relative left-2 text-xs">2</span>
+                </div>
+              </div>
+              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Step 2</time>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Write the title and description</h3>
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400">We can use the code command in the description box to achieve the desired text styling.</p>
+            </li>
+          </ol>
         </section>
         <!-- End Usage -->
         <!-- Bullet List -->
@@ -292,11 +286,11 @@
             <p class="bg-gray-700 py-1.5 px-2 text-white font-medium">HTML</p>
             <div class="code-wrapper relative">
               <pre class="whitespace-pre-wrap">
-                <code class="html hljs bold-code">
+                <code class="html hljs underline-code">
 <span><</span>u<span>></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit<span><</span>/u<span>></span>
                 </code>
               </pre>
-              <button id="copy-bold"
+              <button id="copy-underline"
                 class="absolute bg-gray-900 px-4 py-2 rounded-lg top-2 right-2 text-pink-500 font-medium flex items-center shadow-md"><svg
                   xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard-fill"
                   viewBox="0 0 16 16">

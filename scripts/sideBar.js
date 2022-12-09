@@ -48,7 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
   copyBold.addEventListener("click", () => {
     copyText(boldText);
   });
-
+  // Underline
+  const copyUnder = document.getElementById("copy-underline");
+  const underlineCode = document.querySelector(".underline-code");
+  const underlineText = underlineCode.innerText;
+  copyUnder.addEventListener("click", () => {
+    copyText(underlineText)
+  });
   /*======== Bulleted List =======*/
 })
 
