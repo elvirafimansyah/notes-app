@@ -14,7 +14,8 @@ btnModal.addEventListener("click", () => {
 
   const closeAddModal = document.querySelector(".close-add-modal");
   closeAddModal.addEventListener("click", () => {
-    addModal.classList.add("hidden")
+    addModal.classList.add("hidden");
+    window.location.reload()
   })
 })
 
@@ -149,9 +150,7 @@ function displayNotes() {
       }
 
       styleText(commandButton, pasteTarget);
-      document.addEventListener("DOMContentLoaded", () => {
-        styleText(commandAddButton, pasteTargetAdd);
-      })
+      styleText(commandAddButton, pasteTargetAdd);
 
       modalNotes.addEventListener("keydown", function(e) {
         if (e.key == 'Tab') {
