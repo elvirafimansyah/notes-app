@@ -9,9 +9,6 @@ let exactText;
 
 btnModal.addEventListener("click", () => {
   addModal.classList.remove("hidden");
-
-  
-
   btnModal.parentElement.classList.remove("fixed");
   btnModal.parentElement.classList.add("absolute")
 
@@ -152,7 +149,9 @@ function displayNotes() {
       }
 
       styleText(commandButton, pasteTarget);
-      styleText(commandAddButton, pasteTargetAdd);
+      document.addEventListener("DOMContentLoaded", () => {
+        styleText(commandAddButton, pasteTargetAdd);
+      })
 
       modalNotes.addEventListener("keydown", function(e) {
         if (e.key == 'Tab') {
@@ -212,9 +211,6 @@ function displayNotes() {
         }
       });
     })
-
-   
-
   });
 
   // Search Filter
