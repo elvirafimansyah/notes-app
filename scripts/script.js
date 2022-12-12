@@ -213,7 +213,7 @@ for(const btnContainer of btnContainers) {
     commandBtn.addEventListener("click", () => {
       if (elementName === "ul") {
         insertText(`<${elementName} class="list-disc list-inside">
-  <li></li>
+   <li></li>
 </${elementName}>`, pasteTarget)
       } else if (elementName === "img") {
         let url = prompt("Link URL Image: ");
