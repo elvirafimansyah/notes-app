@@ -6,14 +6,20 @@ const result = document.getElementById("result");
 const btnModal = document.getElementById("btn-modal");
 const searchInput = document.getElementById("search-navbar");
 
+function Kode(event) {
+  if (event.keyCode == 16) {
+    document.execCommand("bold");
+  }
+}
+
 // Tab Indent function
 function tabIndent(element) {
   element.addEventListener("keydown", function (e) {
+    var start = this.selectionStart;
+    var end = this.selectionEnd;
     if (e.key == 'Tab') {
       e.preventDefault();
-      var start = this.selectionStart;
-      var end = this.selectionEnd;
-
+      
       // set textarea value to: text before caret + tab + text after caret
       this.value = this.value.substring(0, start) +
         "\t" + this.value.substring(end);
@@ -21,16 +27,24 @@ function tabIndent(element) {
       // put caret at right position again
       this.selectionStart =
         this.selectionEnd = start + 1;
+    } else if (e.key == "[") {
+      e.preventDefault();
+      // set textarea value to: text before caret + tab + text after caret
+      this.value = this.value.substring(0, start) +
+        "\t" + this.value.substring(end);
+
+      // put caret at right position again
+      this.selectionStart =
+        this.selectionEnd = start - 1;
     }
   })
 }
-
 
 btnModal.addEventListener("click", () => {
   addModal.classList.remove("hidden");
   btnModal.parentElement.classList.remove("fixed");
   btnModal.parentElement.classList.add("absolute")
-
+  
   tabIndent(notesInput);
 
   const closeAddModal = document.querySelector(".close-add-modal");
@@ -69,8 +83,6 @@ btnAdd.addEventListener("click", () => {
   btnModal.parentElement.classList.add("fixed");
   addModal.classList.add("hidden");
 })
-
-
 
 function displayNotes() {
   result.innerHTML = "";
@@ -206,7 +218,9 @@ for(const btnContainer of btnContainers) {
     const elementName = commandBtn.getAttribute("data");
     commandBtn.addEventListener("click", () => {
       if (elementName === "ul") {
-        insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, pasteTarget)
+        insertText(`<${elementName} class="list-disc list-inside">
+          <li></li>
+        </${elementName}>`, pasteTarget)
       } else {
         insertText(`<${elementName}></${elementName}>`, pasteTarget)
       }
