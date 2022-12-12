@@ -5,12 +5,33 @@ const btnAdd = document.querySelector("#btn-add");
 const result = document.getElementById("result");
 const btnModal = document.getElementById("btn-modal");
 const searchInput = document.getElementById("search-navbar");
-let exactText;
+
+// Tab Indent function
+function tabIndent(element) {
+  element.addEventListener("keydown", function (e) {
+    if (e.key == 'Tab') {
+      e.preventDefault();
+      var start = this.selectionStart;
+      var end = this.selectionEnd;
+
+      // set textarea value to: text before caret + tab + text after caret
+      this.value = this.value.substring(0, start) +
+        "\t" + this.value.substring(end);
+
+      // put caret at right position again
+      this.selectionStart =
+        this.selectionEnd = start + 1;
+    }
+  })
+}
+
 
 btnModal.addEventListener("click", () => {
   addModal.classList.remove("hidden");
   btnModal.parentElement.classList.remove("fixed");
   btnModal.parentElement.classList.add("absolute")
+
+  tabIndent(notesInput);
 
   const closeAddModal = document.querySelector(".close-add-modal");
   closeAddModal.addEventListener("click", () => {
@@ -18,6 +39,7 @@ btnModal.addEventListener("click", () => {
     window.location.reload()
   })
 })
+
 
 let data_result = JSON.parse(localStorage.getItem("text")) || [];
 data_result.sort((a, b) => {
@@ -49,6 +71,7 @@ btnAdd.addEventListener("click", () => {
 })
 
 
+
 function displayNotes() {
   result.innerHTML = "";
   data_result.forEach(element => {
@@ -67,7 +90,7 @@ function displayNotes() {
     container.classList.add("w-72", "p-5", "bg-glass", "m-4", "rounded-md", "notess", "border-l-2", "border-pink-600", "shadow-md")
     title.classList.add("text-xl", "word-break");
     tools.classList.add("flex", "justify-between");
-    edit.classList.add('flex', 'items-center', "bg-pink-600", "px-2","py-1.5", "rounded-md", "float-right");
+    edit.classList.add('flex', 'items-center', "bg-pink-600", "px-2", "py-1.5", "rounded-md", "float-right");
     date.classList.add("text-sm", "text-gray-200");
 
     // text
@@ -134,7 +157,7 @@ function displayNotes() {
       const pasteTarget = btnCont.getAttribute("data-for");
       const pasteTargetAdd = btnAddCont.getAttribute("data-for");
       const commandButton = document.querySelectorAll("#btn-command");
-      const commandAddButton = document.querySelectorAll("#btn-add-command");
+      const commandAddButton = document.querySelector("#btn-add-command");
 
       function styleText(button, target) {
         for (let i = 0; i < button.length; i++) {
@@ -142,31 +165,19 @@ function displayNotes() {
             const elementName = e.target.getAttribute("data")
             if (elementName === "ul") {
               insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, target)
+              console.log(target)
             } else {
+              console.log(target)
               insertText(`<${elementName}></${elementName}>`, target)
             }
           })
-        };  
+        };
       }
 
       styleText(commandButton, pasteTarget);
       styleText(commandAddButton, pasteTargetAdd);
 
-      modalNotes.addEventListener("keydown", function(e) {
-        if (e.key == 'Tab') {
-          e.preventDefault();
-          var start = this.selectionStart;
-          var end = this.selectionEnd;
-
-          // set textarea value to: text before caret + tab + text after caret
-          this.value = this.value.substring(0, start) +
-            "\t" + this.value.substring(end);
-
-          // put caret at right position again
-          this.selectionStart =
-            this.selectionEnd = start + 1;
-        }
-      })
+      
 
       function insertText(newText, selector) {
         const textarea = document.querySelector(selector);
@@ -187,6 +198,25 @@ function displayNotes() {
         }
       }
 
+      // Tab Indent
+      // modalNotes.addEventListener("keydown", function (e) {
+      //   if (e.key == 'Tab') {
+      //     e.preventDefault();
+      //     var start = this.selectionStart;
+      //     var end = this.selectionEnd;
+
+      //     // set textarea value to: text before caret + tab + text after caret
+      //     this.value = this.value.substring(0, start) +
+      //       "\t" + this.value.substring(end);
+
+      //     // put caret at right position again
+      //     this.selectionStart =
+      //       this.selectionEnd = start + 1;
+      //   }
+      // })
+
+      tabIndent(modalNotes);
+
       // Set Value Modal
       modalTitle.value = `${element.title}`
       modalNotes.value = `${element.text}`
@@ -206,7 +236,6 @@ function displayNotes() {
       document.addEventListener("mouseup", event => {
         if (window.getSelection.toString().length) {
           exactText = window.getSelection().toString();
-          console.log(exactText)
         }
       });
     })
