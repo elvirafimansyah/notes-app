@@ -6,17 +6,12 @@ const result = document.getElementById("result");
 const btnModal = document.getElementById("btn-modal");
 const searchInput = document.getElementById("search-navbar");
 
-function Kode(event) {
-  if (event.keyCode == 16) {
-    document.execCommand("bold");
-  }
-}
-
 // Tab Indent function
 function tabIndent(element) {
   element.addEventListener("keydown", function (e) {
     var start = this.selectionStart;
     var end = this.selectionEnd;
+    var val = this.value;
     if (e.key == 'Tab') {
       e.preventDefault();
       
@@ -46,7 +41,6 @@ btnModal.addEventListener("click", () => {
   btnModal.parentElement.classList.add("absolute")
   
   tabIndent(notesInput);
-
   const closeAddModal = document.querySelector(".close-add-modal");
   closeAddModal.addEventListener("click", () => {
     addModal.classList.add("hidden");
@@ -219,8 +213,11 @@ for(const btnContainer of btnContainers) {
     commandBtn.addEventListener("click", () => {
       if (elementName === "ul") {
         insertText(`<${elementName} class="list-disc list-inside">
-          <li></li>
-        </${elementName}>`, pasteTarget)
+  <li></li>
+</${elementName}>`, pasteTarget)
+      } else if (elementName === "img") {
+        let url = prompt("Link URL Image: ");
+        insertText(`<img src="${url} class="w-full">`, pasteTarget)
       } else {
         insertText(`<${elementName}></${elementName}>`, pasteTarget)
       }
