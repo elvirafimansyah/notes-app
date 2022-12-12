@@ -151,70 +151,6 @@ function displayNotes() {
         editModal.classList.add("hidden");
       });
 
-      // style button element
-      const btnCont = document.querySelector(".actions");
-      const btnAddCont = document.querySelector(".actions-add")
-      const pasteTarget = btnCont.getAttribute("data-for");
-      const pasteTargetAdd = btnAddCont.getAttribute("data-for");
-      const commandButton = document.querySelectorAll("#btn-command");
-      const commandAddButton = document.querySelector("#btn-add-command");
-
-      function styleText(button, target) {
-        for (let i = 0; i < button.length; i++) {
-          button[i].addEventListener("click", (e) => {
-            const elementName = e.target.getAttribute("data")
-            if (elementName === "ul") {
-              insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, target)
-              console.log(target)
-            } else {
-              console.log(target)
-              insertText(`<${elementName}></${elementName}>`, target)
-            }
-          })
-        };
-      }
-
-      styleText(commandButton, pasteTarget);
-      styleText(commandAddButton, pasteTargetAdd);
-
-      
-
-      function insertText(newText, selector) {
-        const textarea = document.querySelector(selector);
-        textarea.focus();
-
-        let pasted = true;
-        try {
-          if (!document.execCommand("insertText", false, newText)) {
-            pasted = false;
-          }
-        } catch (e) {
-          console.error('error caught:', e);
-          pasted = false;
-        }
-
-        if (!pasted) {
-          console.error('paste unsuccessful, execCommand not supported');
-        }
-      }
-
-      // Tab Indent
-      // modalNotes.addEventListener("keydown", function (e) {
-      //   if (e.key == 'Tab') {
-      //     e.preventDefault();
-      //     var start = this.selectionStart;
-      //     var end = this.selectionEnd;
-
-      //     // set textarea value to: text before caret + tab + text after caret
-      //     this.value = this.value.substring(0, start) +
-      //       "\t" + this.value.substring(end);
-
-      //     // put caret at right position again
-      //     this.selectionStart =
-      //       this.selectionEnd = start + 1;
-      //   }
-      // })
-
       tabIndent(modalNotes);
 
       // Set Value Modal
@@ -256,6 +192,45 @@ function displayNotes() {
       }
     })
   });
+}
+
+// Style Font
+const btnContainers = document.querySelectorAll(".actions");
+for(const btnContainer of btnContainers) {
+  const commandBtns = btnContainer.querySelectorAll('button');
+  console.log(commandBtns);
+  const pasteTarget = btnContainer.getAttribute("data-for");
+  console.log(pasteTarget);
+
+  for (const commandBtn of commandBtns) {
+    const elementName = commandBtn.getAttribute("data");
+    commandBtn.addEventListener("click", () => {
+      if (elementName === "ul") {
+        insertText(`<${elementName} class="list-disc list-inside"></${elementName}>`, pasteTarget)
+      } else {
+        insertText(`<${elementName}></${elementName}>`, pasteTarget)
+      }
+    })
+  }
+}
+
+function insertText(newText, selector) {
+  const textarea = document.querySelector(selector);
+  textarea.focus();
+
+  let pasted = true;
+  try {
+    if (!document.execCommand("insertText", false, newText)) {
+      pasted = false;
+    }
+  } catch (e) {
+    console.error('error caught:', e);
+    pasted = false;
+  }
+
+  if (!pasted) {
+    console.error('paste unsuccessful, execCommand not supported');
+  }
 }
 
 if (localStorage.getItem("text")) {

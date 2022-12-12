@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   copyUnder.addEventListener("click", () => {
     copyText(underlineText)
   });
-  /*======== Bulleted List =======*/
 })
 
 
