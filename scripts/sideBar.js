@@ -55,8 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
   copyUnder.addEventListener("click", () => {
     copyText(underlineText)
   });
+  // Alignment Center
+  const copyCenter = document.getElementById("copy-center");
+  const centerCode = document.querySelector(".center-code");
+  const centerText = centerCode.innerText;
+  copyCenter.addEventListener("click", () => {
+    copyText(centerText)
+  });
+  // Alignment Right
+  const copyRight = document.getElementById("copy-right");
+  const rightCode = document.querySelector(".right-code");
+  const rightText = rightCode.innerText;
+  copyRight.addEventListener("click", () => {
+    copyText(rightText)
+  });
   // Image
-  // Underline
   const copyImage = document.getElementById("copy-image");
   const imageCode = document.querySelector(".image-code");
   const imageText = imageCode.innerText;
