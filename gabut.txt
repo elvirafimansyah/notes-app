@@ -1,0 +1,5 @@
+data="center"
+
+if (elementName == "center") {
+  insertText(`${elementName}`)
+}

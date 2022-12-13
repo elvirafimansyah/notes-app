@@ -217,8 +217,9 @@ for(const btnContainer of btnContainers) {
 </${elementName}>`, pasteTarget)
       } else if (elementName === "img") {
         let url = prompt("Link URL Image: ");
-        insertText(`<img src="${url} class="w-full">`, pasteTarget)
-      } else {
+        insertText(`<img src="${url} class="w-full" alt="image">`, pasteTarget)
+      }
+      else {
         insertText(`<${elementName}></${elementName}>`, pasteTarget)
       }
     })

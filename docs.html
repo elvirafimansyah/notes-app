@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Docoumentation | Emore Notes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  <link rel="icon" type="image/png" href="src/img/logo.png">
   <script>
     tailwind.config = {
       theme: {
@@ -120,6 +121,17 @@
                 </svg>&nbsp;&nbsp;Underline</span>
               </a>
             </li>
+            <li>
+              <a href="#section-image"
+                class="flex w-full justify-between text-gray-300 cursor-pointer items-center md:px-4 md:py-3 md:hover:bg-gray-800 md:rounded-md  md:hover:text-white focus:outline-none ">
+                <span class="text-sm ml-2 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image"
+                  viewBox="0 0 16 16">
+                  <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  <path
+                    d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z" />
+                </svg>&nbsp;&nbsp;Images</span>
+              </a>
+            </li>
           </ul>
           <span class="absolute bottom-5 px-4 text-slate-300">
             Made By &nbsp;
@@ -199,6 +211,16 @@
                   <path
                     d="M5.313 3.136h-1.23V9.54c0 2.105 1.47 3.623 3.917 3.623s3.917-1.518 3.917-3.623V3.136h-1.23v6.323c0 1.49-.978 2.57-2.687 2.57-1.709 0-2.687-1.08-2.687-2.57V3.136zM12.5 15h-9v-1h9v1z" />
                 </svg>&nbsp;&nbsp;Underline</span>
+              </a>
+            </li>
+            <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6 px-2">
+              <a href="#section-image" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                <span class="text-sm ml-2 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image"
+                  viewBox="0 0 16 16">
+                  <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  <path
+                    d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z" />
+                </svg>&nbsp;&nbsp;Images</span>
               </a>
             </li>
           </ul>
@@ -360,6 +382,33 @@
           </div>
         </section>
         <!-- End Underline Font -->
+        <!-- Image -->
+        <section id="section-image">
+          <h1 class="inline-block text-xl sm:text-2xl font-semibold text-slate-200 tracking-tight flex items-center">Images</h1>
+          <p class="my-2 text-sm md:text-md text-slate-400">Use this example to add a image</p>
+          <div>
+            <div class="preview text-white border border-gray-800 p-3">
+              <img src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" class="w-full" alt="image">
+            </div>
+            <p class="bg-gray-700 py-1.5 px-2 text-white font-medium">HTML</p>
+            <div class="code-wrapper relative">
+              <pre class="whitespace-pre-wrap">
+                <code class="html hljs image-code">
+<span><</span>img<span> src="_url_image_" alt="image"<span>/></span>
+<span><</span>!-- example: <span><</span>img src="https://image.jpg" alt="image"<span>/></span>--<span>></span>
+                </code>
+              </pre>
+              <button id="copy-image"
+                class="absolute bg-gray-900 px-4 py-2 rounded-lg top-2 right-2 text-pink-500 font-medium flex items-center shadow-md"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard-fill"
+                  viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z" />
+                </svg></button>
+            </div>
+          </div>
+        </section>
+        <!-- End Image -->
         <div id="toast-success"
           class="flex fixed bottom-0 items-center p-4 mb-4 w-full max-w-xs rounded-lg shadow text-gray-400 bg-gray-800 hidden "
           role="alert">
@@ -385,7 +434,6 @@
             </svg>
           </button>
         </div>
-        <p c lass="text-white">text white</p>
       </div>
     </div>
   </main>

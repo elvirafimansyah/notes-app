@@ -55,6 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
   copyUnder.addEventListener("click", () => {
     copyText(underlineText)
   });
+  // Image
+  // Underline
+  const copyImage = document.getElementById("copy-image");
+  const imageCode = document.querySelector(".image-code");
+  const imageText = imageCode.innerText;
+  copyImage.addEventListener("click", () => {
+    copyText(imageText);
+  });
 })
 
 
