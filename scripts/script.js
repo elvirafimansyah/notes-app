@@ -204,9 +204,7 @@ function displayNotes() {
 const btnContainers = document.querySelectorAll(".actions");
 for(const btnContainer of btnContainers) {
   const commandBtns = btnContainer.querySelectorAll('button');
-  console.log(commandBtns);
   const pasteTarget = btnContainer.getAttribute("data-for");
-  console.log(pasteTarget);
 
   for (const commandBtn of commandBtns) {
     const elementName = commandBtn.getAttribute("data");
@@ -218,8 +216,11 @@ for(const btnContainer of btnContainers) {
       } else if (elementName === "img") {
         let url = prompt("Link URL Image: ");
         insertText(`<img src="${url} class="w-full" alt="image">`, pasteTarget)
-      }
-      else {
+      } else if(elementName === "h1") {
+        insertText(`<h1 class="text-xl"></h1>`, pasteTarget)
+      } else if (elementName === "right") {
+        insertText(`<p class="float-right></p>`, pasteTarget)
+      } else {
         insertText(`<${elementName}></${elementName}>`, pasteTarget)
       }
     })
